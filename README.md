@@ -1,10 +1,20 @@
 # RABuffs
 
-Raid and party buff monitor for WoW Classic Era (1.15) and WoW: Forever (1.60). A small window of bars shows
-how many people have each buff; hover a bar to see who is missing it, click it to buff the next person.
+A port of the existing RABuffs addon to WoW Classic Era (1.15) and WoW: Forever (1.60). It's a raid and party
+buff monitor: a small window of bars shows how many people have each buff; hover a bar to see who is missing it,
+click it to buff the next person.
 
-A revival of RABuffs (2006), by way of dagochen, killersmath, melbaa and pepopo978's forks, rewritten for the
-modern client API. Turtle WoW's custom items and spells from those forks are left out.
+RABuffs was written in 2006 for the original 1.12 client. This port builds on these earlier versions:
+
+- [dagochen/RABuff](https://github.com/dagochen/RABuff): the 2006 addon, put on GitHub with added consumables
+- [killersmath/Rabuffs](https://github.com/killersmath/Rabuffs)
+- [melbaa/Rabuffs](https://github.com/melbaa/Rabuffs)
+- [pepopo978/Rabuffs](https://github.com/pepopo978/Rabuffs): profiles, per-buff options and most of the buff
+  list used here
+
+Those versions target the 1.12 client, whose API the modern clients no longer have, so the code was rewritten
+here; the buff data, behavior and commands carry over. Turtle WoW's custom items and spells from those forks
+are left out.
 
 ## Using it
 
