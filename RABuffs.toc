@@ -1,0 +1,19 @@
+## Interface: 11509, 16001
+## Title: RABuffs
+## Notes: Raid and party buff monitor. Click a bar to buff whoever is missing it.
+## Author: Original RABuffs authors (2006), dagochen, killersmath, melbaa, pepopo978 and contributors
+## Version: 1.0.0-alpha1
+## SavedVariables: RABuffsDB
+## SavedVariablesPerCharacter: RABuffsCharDB
+
+Locale.lua
+Compat.lua
+Data\Buffs.lua
+Core.lua
+Scan.lua
+Query.lua
+Cast.lua
+UI\Menu.lua
+UI\Bars.lua
+UI\Options.lua
+Slash.lua
