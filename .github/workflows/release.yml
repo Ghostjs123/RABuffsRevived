@@ -1,0 +1,30 @@
+name: Release
+
+# Pushing a tag like v1.0.0 runs the tests, then packages the addon (BigWigsMods/packager) as a GitHub release.
+# It also uploads to CurseForge once the CURSEFORGEAPIKEY repository secret is set and RABuffs.toc has an
+# "## X-Curse-Project-ID:" line; until then that step is skipped.
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tests:
+    uses: ./.github/workflows/tests.yml
+
+  release:
+    needs: tests
+    runs-on: ubuntu-latest
+    env:
+      CF_API_KEY: ${{ secrets.CURSEFORGEAPIKEY }}
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: BigWigsMods/packager@v2

@@ -58,3 +58,15 @@ pip install -r tests/requirements.txt
 python tests/run_tests.py            # everything
 python tests/run_tests.py forever    # tests whose names contain "forever"
 ```
+
+GitHub Actions runs them on every push (`.github/workflows/tests.yml`).
+
+## Releasing
+
+Pushing a tag such as `v1.0.0` runs the tests, then packages the addon with
+[BigWigsMods/packager](https://github.com/BigWigsMods/packager) into a GitHub release (`tests/` is left out,
+see `.pkgmeta`). To also upload to CurseForge:
+
+1. Create the CurseForge project and add its ID to `RABuffs.toc` as `## X-Curse-Project-ID: <id>`.
+2. Make an API token at https://legacy.curseforge.com/account/api-tokens and add it to the GitHub repository's
+   secrets (Settings > Secrets and variables > Actions) as `CURSEFORGEAPIKEY`.
